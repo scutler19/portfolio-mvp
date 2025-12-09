@@ -12,28 +12,35 @@ export interface Profile {
 }
 
 export async function getCurrentUser() {
-  const supabase = await createClient()
-  const {
-    data: { user },
-  } = await supabase.auth.getUser()
+  try {
+    const supabase = await createClient()
+    const {
+      data: { user },
+    } = await supabase.auth.getUser()
 
-  if (!user) {
+    if (!user) {
+      return null
+    }
+
+    const { data: profile } = await supabase
+      .from('profiles')
+      .select('*')
+      .eq('id', user.id)
+      .single()
+
+    if (!profile) {
+      return null
+    }
+
+    return {
+      ...user,
+      profile: profile as Profile,
+    }
+  } catch (error) {
+    // If Supabase isn't configured or there's an error, return null
+    // This allows the app to continue functioning (e.g., showing login page)
+    console.error('Error getting current user:', error)
     return null
-  }
-
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', user.id)
-    .single()
-
-  if (!profile) {
-    return null
-  }
-
-  return {
-    ...user,
-    profile: profile as Profile,
   }
 }
 
