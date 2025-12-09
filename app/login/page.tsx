@@ -22,7 +22,6 @@ export default function LoginPage() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const router = useRouter()
-  const supabase = createClient()
 
 
   const handleDemoClick = (role: 'admin' | 'client') => {
@@ -47,6 +46,8 @@ export default function LoginPage() {
     const loginPassword = passwordOverride || password
 
     try {
+      // Create client only when needed (not during SSR/prerender)
+      const supabase = createClient()
       const { error: signInError } = await supabase.auth.signInWithPassword({
         email: loginEmail,
         password: loginPassword,
