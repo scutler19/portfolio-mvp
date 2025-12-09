@@ -2,6 +2,9 @@ import { requireAuth } from '@/lib/auth'
 import { redirect } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 
+// Force dynamic rendering - these pages require authentication
+export const dynamic = 'force-dynamic'
+
 export default async function ClientLayout({
   children,
 }: {

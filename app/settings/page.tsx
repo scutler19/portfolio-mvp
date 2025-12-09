@@ -1,6 +1,9 @@
 import { requireAuth } from '@/lib/auth'
 import Navbar from '@/components/Navbar'
 
+// Force dynamic rendering - requires authentication
+export const dynamic = 'force-dynamic'
+
 export default async function SettingsPage() {
   const user = await requireAuth()
   const currentMode: 'admin' | 'client' = user.profile.role

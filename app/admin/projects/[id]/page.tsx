@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation'
 import ProjectForm from '@/components/ProjectForm'
 import ProjectNotes from '@/components/ProjectNotes'
 
+// Force dynamic rendering - requires authentication
+export const dynamic = 'force-dynamic'
+
 export default async function ProjectDetailPage({
   params,
 }: {

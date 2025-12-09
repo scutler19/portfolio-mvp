@@ -3,6 +3,9 @@ import Link from 'next/link'
 import StatusBadge from '@/components/StatusBadge'
 import { ProjectStatus } from '@/types/database'
 
+// Force dynamic rendering - requires authentication
+export const dynamic = 'force-dynamic'
+
 export default async function AdminProjectsPage() {
   const supabase = await createClient()
 

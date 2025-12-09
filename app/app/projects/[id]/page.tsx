@@ -5,6 +5,9 @@ import StatusBadge from '@/components/StatusBadge'
 import { ProjectStatus } from '@/types/database'
 import ClientProjectNotes from '@/components/ClientProjectNotes'
 
+// Force dynamic rendering - requires authentication
+export const dynamic = 'force-dynamic'
+
 export default async function ClientProjectDetailPage({
   params,
 }: {
