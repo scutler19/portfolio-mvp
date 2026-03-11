@@ -42,6 +42,9 @@ export function ProjectForm({ action, project, redirectTo }: ProjectFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {project && (
+        <input type="hidden" name="_projectId" value={project.id} />
+      )}
       {error && (
         <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700 dark:border-red-900 dark:bg-red-950/50 dark:text-red-400">
           {error}

@@ -2,7 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ProjectForm } from '../../project-form'
-import { updateProject } from '../../actions'
+import { updateProjectAction } from '../../actions'
 
 export default async function EditProjectPage({
   params,
@@ -42,7 +42,7 @@ export default async function EditProjectPage({
 
       <div className="max-w-xl rounded-xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
         <ProjectForm
-          action={(fd) => updateProject(id, fd)}
+          action={updateProjectAction}
           project={project}
           redirectTo={`/projects/${id}`}
         />

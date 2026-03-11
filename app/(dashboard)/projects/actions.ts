@@ -48,6 +48,13 @@ export async function updateProject(id: string, formData: FormData) {
   revalidatePath('/dashboard')
 }
 
+/** Server action for Client Components: reads project id from formData.get('_projectId'). */
+export async function updateProjectAction(formData: FormData) {
+  const id = formData.get('_projectId') as string
+  if (!id) throw new Error('Missing project id')
+  return updateProject(id, formData)
+}
+
 export async function deleteProject(id: string) {
   const supabase = await createClient()
   const {

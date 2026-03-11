@@ -2,7 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ProjectForm } from '../project-form'
-import { updateProject } from '../actions'
+import { updateProjectAction } from '../actions'
 import { ProjectActions } from '../project-actions'
 import { StatusBadge } from '@/components/ui/status-badge'
 import type { ProjectStatus } from '@/lib/types/database'
@@ -74,7 +74,7 @@ export default async function ProjectDetailPage({
           </p>
           <div className="mt-6">
             <ProjectForm
-              action={(fd) => updateProject(id, fd)}
+              action={updateProjectAction}
               project={project}
               redirectTo={`/projects/${id}`}
             />
