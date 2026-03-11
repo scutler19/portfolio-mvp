@@ -1,6 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ProjectTrack - SaaS MVP Portfolio Demo
+
+A full-stack project tracking SaaS built with Next.js, Supabase, and Tailwind CSS. Designed as a live portfolio demo for freelance clients.
+
+## Tech Stack
+
+- **Next.js 16** (App Router)
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS**
+- **Supabase** (Auth + Postgres)
 
 ## Getting Started
+
+### 1. Environment Variables
+
+Copy `.env.example` to `.env.local` and add your Supabase credentials:
+
+```bash
+cp .env.example .env.local
+```
+
+Set:
+
+- `NEXT_PUBLIC_SUPABASE_URL` - from Supabase Dashboard > Settings > API
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY` - from Supabase Dashboard > Settings > API
+
+### 2. Supabase Setup
+
+Run the schema and seed demo data. See [supabase/README.md](supabase/README.md) for full instructions.
+
+1. Create a Supabase project
+2. Run `supabase/schema.sql` in the SQL Editor
+3. Create demo user (`demo@example.com` / `demo1234`) in Authentication > Users
+4. Run `supabase/seed-demo.sql` (replace `DEMO_USER_UUID` with the user's UUID)
+
+### 3. Run the App
 
 First, run the development server:
 
