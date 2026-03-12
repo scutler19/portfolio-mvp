@@ -93,7 +93,7 @@ export default async function ProjectDetailPage({
           </div>
           <div className="min-h-[120px]">
             {tasks && tasks.length > 0 ? (
-              <ul className="divide-y divide-slate-100 dark:divide-slate-800">
+              <ul className="divide-y divide-[var(--border)]">
                 {tasks.map((task) => (
                   <li key={task.id}>
                     <Link

@@ -27,7 +27,7 @@ export function DashboardSkeleton() {
             <Skeleton className="h-5 w-28" />
             <Skeleton className="mt-2 h-4 w-48" />
           </div>
-          <ul className="divide-y divide-slate-100 dark:divide-slate-800">
+          <ul className="divide-y divide-[var(--border)]">
             {[1, 2, 3, 4, 5].map((i) => (
               <li key={i} className="flex items-center gap-4 px-6 py-4">
                 <Skeleton className="h-4 flex-1" />
@@ -41,7 +41,7 @@ export function DashboardSkeleton() {
             <Skeleton className="h-5 w-36" />
             <Skeleton className="mt-2 h-4 w-40" />
           </div>
-          <ul className="divide-y divide-slate-100 dark:divide-slate-800">
+          <ul className="divide-y divide-[var(--border)]">
             {[1, 2, 3, 4, 5].map((i) => (
               <li key={i} className="flex items-center gap-4 px-6 py-4">
                 <Skeleton className="h-4 flex-1" />
@@ -58,7 +58,7 @@ export function DashboardSkeleton() {
 export function ListSkeleton({ rows = 5 }: { rows?: number }) {
   return (
     <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
-      <ul className="divide-y divide-slate-100 dark:divide-slate-800">
+      <ul className="divide-y divide-[var(--border)]">
         {Array.from({ length: rows }).map((_, i) => (
           <li key={i} className="flex items-center justify-between gap-4 px-4 py-5 sm:px-6">
             <div className="min-w-0 flex-1 space-y-2">

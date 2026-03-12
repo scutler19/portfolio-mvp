@@ -1,18 +1,7 @@
--- Demo Data Seeding Instructions
--- ==============================
---
--- STEP 1: Create the demo user in Supabase
--- Go to Authentication > Users > Add user
--- Email: demo@example.com
--- Password: demo1234 (or your choice)
--- Copy the user's UUID after creation.
---
--- STEP 2: Replace cc83d8eb-f832-4410-b28d-8cfa8ea2c084 below with that UUID, then run in SQL Editor.
-
--- Option A: If you know the demo user UUID, set it here:
--- \set demo_user_id 'your-uuid-here'
-
--- Run as a single transaction. Replace the UUID in the first line.
+-- Demo data for ProjectTrack portfolio demo.
+-- 1. Create demo user in Supabase: Authentication > Users > Add user (e.g. demo@example.com / demo1234).
+-- 2. Copy the user's UUID, then replace every occurrence of cc83d8eb-f832-4410-b28d-8cfa8ea2c084 below with that UUID.
+-- 3. Run this script in the Supabase SQL Editor.
 insert into public.projects (id, user_id, name, description, status) values
   (gen_random_uuid(), 'cc83d8eb-f832-4410-b28d-8cfa8ea2c084', 'Website Redesign', 'Modernize the company website with new branding and responsive design.', 'active'),
   (gen_random_uuid(), 'cc83d8eb-f832-4410-b28d-8cfa8ea2c084', 'Mobile App MVP', 'Build initial version of the mobile application for iOS and Android.', 'planning'),

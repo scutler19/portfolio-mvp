@@ -1,3 +1,4 @@
+/** Shared types for projects and tasks (matches Supabase schema). */
 export type ProjectStatus = 'planning' | 'active' | 'on_hold' | 'completed'
 export type TaskStatus = 'todo' | 'in_progress' | 'completed'
 

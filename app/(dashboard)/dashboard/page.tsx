@@ -119,7 +119,7 @@ export default async function DashboardPage() {
               Projects you&apos;ve recently updated
             </p>
           </div>
-          <ul className="divide-y divide-slate-100 dark:divide-slate-800">
+          <ul className="divide-y divide-[var(--border)]">
             {recentProjects && recentProjects.length > 0 ? (
               recentProjects.map((project) => (
                 <li key={project.id}>
