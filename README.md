@@ -14,14 +14,12 @@ This repo is a **showroom project**. It demonstrates the ability to ship a compl
 
 ## Live Demo
 
-<!-- Add your live demo URL when deployed (e.g. Vercel). -->
-**Live demo:** _[Add link when deployed]_
+**Live demo:** https://portfolio-mvp-871e.vercel.app/
 
 ---
 
 ## Demo Account
 
-<!-- If you deploy with seeded demo data, document the demo login here. -->
 - **Demo login:** Use **Demo Login** on the sign-in page to explore without creating an account.
 - **Credentials** (if you prefer to sign in manually): `demo@example.com` / `demo1234` — only available if the demo user and seed data are set up (see [Demo data](#demo-data) below).
 
@@ -29,8 +27,14 @@ This repo is a **showroom project**. It demonstrates the ability to ship a compl
 
 ## Screenshots
 
-<!-- Add 1–3 screenshots (e.g. dashboard, projects list, task detail) to show layout and UI. -->
-_Screenshots coming soon._
+### Dashboard
+![Dashboard](public/screenshots/dashboard.png)
+
+### Projects
+![Projects](public/screenshots/projects.png)
+
+### Tasks
+![Tasks](public/screenshots/tasks.png)
 
 ---
 
